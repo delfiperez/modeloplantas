@@ -5,16 +5,37 @@ import streamlit as st
 def intro():
     import streamlit as st
 
-    st.write("# Modelos predictivos para geminacion de plantas 👋")
+    st.write("# Desarrollo de un Modelo para Predecir el Tiempo de Germinación 👋")
     st.sidebar.success("Seleccionar un modelo")
 
     st.markdown(
         """
-        Este es un trabajo hecho por el grupo plantas 🌱❤️
+        **¿Cuanto tardará una semilla en germinar?**
 
-        Para utilizar el modelo haga click en la flecha a su izquierda 👈🏻
+        A través de la realización de técnicas como la micropropagación, se observó que la germinación es un proceso 
+        influenciado por multiples factores. Para la construcción de este modelo, se utilizaron 4 variables explicativas
+        que resultaron ser significativas:
+        - Especie
+        - Tiempo de esterilización de la semilla (en lavandina, calculado en minutos)
+        - Porcentaje de Agar del medio de cultivo 
+        - Tipo de medio de cultivo (Suplementado si/no)
 
-        Para ver más contenido de Bioclubs, pueden mirar nuestro 
+        El objetivo de este modelo es predecir el tiempo de germinación, en función de las condiciones específicas de tratamiento 
+        y cultivo, utilizando un clasificador. 
+
+        Los datos recolectados para la realización del modelo se obtuvieron de los laboratorios realizados. Además, para entrenar el modelo, se sometió a los 
+        mismos a una preparación, que implicó la limpieza y normalización de los mismos, así como la conversión de variables 
+        categóricas, como la especie y el tipo de medio, a formatos adecuados para el análisis.
+
+        ❤️🌱 Este es un trabajo hecho por el grupo de bioinformatica, plantas 🌱❤️
+
+        Para utilizar el modelo **haga click en la flecha a su izquierda 👈** e ingrese a la sección **Modelo**
+
+        ### ¿Queres saber mas de nosotros?
+        Para ver más contenido de Bioclubs:
+        
+        - Visita nuestro Instagram [bioclubs.uade](https://www.instagram.com/bioclubs.uade/)
+        - Revisa nuestro Tik Tok [biotokers](https://www.tiktok.com/@biotokers)
         
     """
     )
@@ -36,11 +57,10 @@ def svm():
   #ovr = joblib.load("modelos/Regresion_logistica_modif.pkl") #Modificar aca la ruta para el modelo
   m = joblib.load("modelos/SVM.pkl")
 
-  st.title('Modelo de Predicción') #Agregar titulo
+  st.title('¿Cuánto tardará mi planta en germinar?') #Agregar titulo
   st.markdown("""Complete los datos indicados para estimar el tiempo en que tardará su planta en germinar""")# Agregar texto
 
   st.subheader('Subtitulo')
-
 
   lav = st.number_input('Tiempo en miutos dejado en lavandina', max_value=20 ,help="Como maximo 20 min.")
   esp = st.selectbox('Especie de la semilla',["Soja Blanca","Arveja","Zapallo"])
