@@ -88,7 +88,7 @@ def svm():
 
     pred = modelo(variables, m)
     
-      st.write(pred)
+    st.write(pred)
 
     if pred == 1:
         st.write("Su planta germinará en menos de 3 días!")
