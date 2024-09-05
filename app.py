@@ -10,8 +10,12 @@ def intro():
 
     st.markdown(
         """
-        Este es un trabajo hecho por el grupo plantas 🤮.
-        Por favor tengan **paciencia**, nosotros la tenemos con ellos
+        Este es un trabajo hecho por el grupo plantas 🌱❤️
+
+        Para utilizar el modelo haga click en la flecha a su izquierda 👈🏻
+
+        Para ver más contenido de Bioclubs, pueden mirar nuestro 
+        
     """
     )
 
@@ -30,10 +34,10 @@ def svm():
   
 
   #ovr = joblib.load("modelos/Regresion_logistica_modif.pkl") #Modificar aca la ruta para el modelo
-  m = joblib.load("modelos/LR.pkl")
+  m = joblib.load("modelos/Regresion_logistica_modif.pkl")
 
-  st.title('Titulo') #Agregar titulo
-  st.markdown("""Texto""")# Agregar texto
+  st.title('Modelo de Predicción') #Agregar titulo
+  st.markdown("""Complete los datos indicados para estimar el tiempo en que tardará su planta en germinar""")# Agregar texto
 
   st.subheader('Subtitulo')
 
@@ -85,6 +89,13 @@ def svm():
     pred = modelo(variables, m)
       
     st.write(pred)
+
+    if pred == 1:
+        st.write("Su planta germinará en menos de 3 días!)
+    elif pred == 2:
+        st.write("Su planta tardará entre 4 y 6 días en germinar")
+    else:
+        st.write("Su planta tardará 1 semana o más en germinar!")
 
   st.button("Reset", type="primary")
 
