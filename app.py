@@ -30,7 +30,7 @@ def svm():
   
 
   ovr = joblib.load("modelos/Regresion_logistica_modif.pkl") #Modificar aca la ruta para el modelo
-  m= joblib.load("modelos/svc_original.pkl")
+  m= joblib.load("modelos/SVM.pkl")
 
   st.title('Titulo') #Agregar titulo
   st.markdown("""Texto""")# Agregar texto
