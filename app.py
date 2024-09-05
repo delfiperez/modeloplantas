@@ -67,14 +67,19 @@ def svm():
     else:
       med="1"
 
-
-    variables={
-      "especie_n": esp,
-      "medio_n": med,
-      "Minutos en Lavandina": lav,
-      "porcentaje del Agar": porAga}
+    #variables={
+    #  "especie_n": esp,
+    #  "medio_n": med,
+    #  "Minutos en Lavandina": lav,
+    #  "porcentaje del Agar": porAga}
     
-    variables = pd.DataFrame([variables])
+    #variables = pd.DataFrame([variables])
+
+    variables = pd.DataFrame({
+        "especie_n": esp,
+        "medio_n": med,
+        "Minutos en Lavandina": lav,
+        "porcentaje del Agar": porAga}, index = [1])
     
     st.write(variables)
 
