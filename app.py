@@ -63,7 +63,7 @@ def svm():
   st.title('¿Cuánto tardará mi semilla en germinar?') #Agregar titulo
   st.markdown("""Complete los datos indicados para estimar el tiempo de germinación de su semilla""")# Agregar texto
 
-  lav = st.number_input('Tiempo de desinfección en lavandina (en minutos)', max_value=20 ,help="Como maximo 20 min.")
+  lav = st.number_input('Tiempo de desinfección en lavandina (en minutos)', min_value = 0, max_value=20 ,help="Como maximo 20 min.")
   esp = st.selectbox('Especie de la semilla',["Soja Blanca","Arveja","Zapallo"])
   porAga = st.selectbox('Porcentaje de agar', ["1.5%","1.35%"])
   med = st.selectbox('Tipo de medio', ["Normal","Suplementado"])
