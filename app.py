@@ -82,7 +82,7 @@ def svm():
         "especie_n": esp,
         "medio_n": med,
         "Minutos en Lavandina": lav,
-        "porcentaje del Agar": porAga}, index = [1])
+        "Porcetaje del Agar": porAga}, index = [1])
 
     st.write(variables.dtypes)
     st.write(variables)
