@@ -23,20 +23,19 @@ def svm():
   #from sklearn.svm import SVC
 
   
-  def modelo(var,ovr,m):
-    pred = ovr.predict(var)
-    p2=m.predict(var)
-    return pred, p2
+  def modelo(var,m):
+    #pred = ovr.predict(var)
+    pred= m.predict(var)
+    return pred
   
 
-  ovr = joblib.load("modelos/Regresion_logistica_modif.pkl") #Modificar aca la ruta para el modelo
-  m= joblib.load("modelos/SVM.pkl")
+  #ovr = joblib.load("modelos/Regresion_logistica_modif.pkl") #Modificar aca la ruta para el modelo
+  m = joblib.load("modelos/SVM.pkl")
 
   st.title('Titulo') #Agregar titulo
   st.markdown("""Texto""")# Agregar texto
 
   st.subheader('Subtitulo')
-
 
 
   lav = st.number_input('Tiempo en miutos dejado en lavandina', max_value=20 ,help="Como maximo 20 min.")
@@ -83,9 +82,9 @@ def svm():
     
     st.write(variables)
 
-    pred, pred2 = modelo(variables,ovr,m)
+    pred = modelo(variables, m)
       
-    st.write(pred, pred2)
+    st.write(pred)
 
   st.button("Reset", type="primary")
 
