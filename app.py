@@ -10,7 +10,7 @@ def intro():
 
     st.markdown(
         """
-        ### ¿Cuanto tardará una semilla en germinar?
+        ### ¿Cuánto tardará una semilla en germinar?
 
         A través de la realización de técnicas como la micropropagación, se observó que la germinación es un proceso 
         influenciado por multiples factores. Para la construcción de este modelo, se utilizaron 4 variables explicativas
@@ -30,15 +30,15 @@ def intro():
         Actualmente, se sabe que muchas áreas se benefician enormemente del poder predictivo y analítico de la IA. A través de este
         trabajo se pretende hacer una demostración de ello y de su aplicación en las ciencias biológicas.
 
-        ❤️🌱 Este es un trabajo hecho por el grupo de bioinformatica, plantas 🌱❤️
+        ❤️🌱 Este es un trabajo hecho por el grupo de bioinformática, plantas 🌱❤️
 
         Para utilizar el modelo **haga click en la flecha a su izquierda 👈** e ingrese a la sección **Modelo**
 
-        ### ¿Queres saber mas de nosotros?
+        ### ¿Querés saber más de nosotros?
         Para ver más contenido de Bioclubs:
         
-        - Visita nuestro Instagram [bioclubs.uade](https://www.instagram.com/bioclubs.uade/)
-        - Revisa nuestro Tik Tok [biotokers](https://www.tiktok.com/@biotokers)
+        - Visitá nuestro Instagram [bioclubs.uade](https://www.instagram.com/bioclubs.uade/)
+        - Revisá nuestro Tik Tok [biotokers](https://www.tiktok.com/@biotokers)
         
     """
     )
@@ -113,11 +113,11 @@ def svm():
     #st.write(pred)
 
     if pred == "1":
-        st.write("💚 Su planta germinará en menos de 3 días! 💚")
+        st.write("Su planta germinará en menos de 3 días! 💚")
     elif pred == "2":
-        st.write("🩵 Su planta tardará entre 4 y 6 días en germinar 🩵")
+        st.write("Su planta tardará entre 4 y 6 días en germinar 🩵")
     else:
-        st.write("💙 Su planta tardará 1 semana o más en germinar 💙")
+        st.write("Su planta tardará 1 semana o más en germinar 💙")
 
   st.button("Reset", type="primary")
 
