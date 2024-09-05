@@ -90,9 +90,9 @@ def svm():
     
     st.write(pred)
 
-    if pred == 1:
+    if pred == "1":
         st.write("Su planta germinará en menos de 3 días!")
-    elif pred == 2:
+    elif pred == "2":
         st.write("Su planta tardará entre 4 y 6 días en germinar")
     else:
         st.write("Su planta tardará 1 semana o más en germinar!")
