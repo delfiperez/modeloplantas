@@ -34,7 +34,7 @@ def svm():
   
 
   #ovr = joblib.load("modelos/Regresion_logistica_modif.pkl") #Modificar aca la ruta para el modelo
-  m = joblib.load("modelos/SVM.pkl")
+  m = joblib.load("modelos/Regresion_logistica_modif.pkl")
 
   st.title('Modelo de Predicción') #Agregar titulo
   st.markdown("""Complete los datos indicados para estimar el tiempo en que tardará su planta en germinar""")# Agregar texto
