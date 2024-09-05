@@ -115,9 +115,9 @@ def svm():
     if pred == "1":
         st.write("Su planta germinará en menos de 3 días! 💚")
     elif pred == "2":
-        st.write("Su planta tardará entre 4 y 6 días en germinar 🩵")
+        st.write("Su planta tardará entre 4 y 6 días en germinar 💙")
     else:
-        st.write("Su planta tardará 1 semana o más en germinar 💙")
+        st.write("Su planta tardará 1 semana o más en germinar 🖤")
 
   st.button("Reset", type="primary")
 
