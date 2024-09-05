@@ -5,12 +5,12 @@ import streamlit as st
 def intro():
     import streamlit as st
 
-    st.write("# Desarrollo de un Modelo para Predecir el Tiempo de Germinación 👋")
+    st.write("# Desarrollo de un Modelo para Predecir el Tiempo de Germinación")
     st.sidebar.success("Seleccionar un modelo")
 
     st.markdown(
         """
-        **¿Cuanto tardará una semilla en germinar?**
+        ### ¿Cuanto tardará una semilla en germinar?
 
         A través de la realización de técnicas como la micropropagación, se observó que la germinación es un proceso 
         influenciado por multiples factores. Para la construcción de este modelo, se utilizaron 4 variables explicativas
@@ -21,11 +21,14 @@ def intro():
         - Tipo de medio de cultivo (Suplementado si/no)
 
         El objetivo de este modelo es predecir el tiempo de germinación, en función de las condiciones específicas de tratamiento 
-        y cultivo, utilizando un clasificador. 
+        y cultivo, utilizando para ello un clasificador. 
 
-        Los datos recolectados para la realización del modelo se obtuvieron de los laboratorios realizados. Además, para entrenar el modelo, se sometió a los 
-        mismos a una preparación, que implicó la limpieza y normalización de los mismos, así como la conversión de variables 
+        Los datos recolectados para la realización del modelo se obtuvieron de los laboratorios llevados a cabo por el grupo de plantas. Además, para entrenar el modelo, se sometió a los 
+        mismos a una preparación, que implicó la limpieza y normalización de estos, así como la conversión de variables 
         categóricas, como la especie y el tipo de medio, a formatos adecuados para el análisis.
+
+        Actualmente, se sabe que muchas áreas se benefician enormemente del poder predictivo y analítico de la IA. A través de este
+        trabajo se pretende hacer una demostración de ello y de su aplicación en las ciencias biológicas.
 
         ❤️🌱 Este es un trabajo hecho por el grupo de bioinformatica, plantas 🌱❤️
 
@@ -57,12 +60,10 @@ def svm():
   #ovr = joblib.load("modelos/Regresion_logistica_modif.pkl") #Modificar aca la ruta para el modelo
   m = joblib.load("modelos/SVM.pkl")
 
-  st.title('¿Cuánto tardará mi planta en germinar?') #Agregar titulo
-  st.markdown("""Complete los datos indicados para estimar el tiempo en que tardará su planta en germinar""")# Agregar texto
+  st.title('¿Cuánto tardará mi semilla en germinar?') #Agregar titulo
+  st.markdown("""Complete los datos indicados para estimar el tiempo de germinación de su semilla""")# Agregar texto
 
-  st.subheader('Subtitulo')
-
-  lav = st.number_input('Tiempo en miutos dejado en lavandina', max_value=20 ,help="Como maximo 20 min.")
+  lav = st.number_input('Tiempo de desinfección en lavandina (en minutos)', max_value=20 ,help="Como maximo 20 min.")
   esp = st.selectbox('Especie de la semilla',["Soja Blanca","Arveja","Zapallo"])
   porAga = st.selectbox('Porcentaje de agar', ["1.5%","1.35%"])
   med = st.selectbox('Tipo de medio', ["Normal","Suplementado"])
@@ -104,19 +105,19 @@ def svm():
         "Minutos en Lavandina": lav,
         "Porcetaje del Agar": porAga}, index = [1])
 
-    st.write(variables.dtypes)
-    st.write(variables)
+   # st.write(variables.dtypes)
+   # st.write(variables)
 
     pred = modelo(variables, m)
     
-    st.write(pred)
+    #st.write(pred)
 
     if pred == "1":
-        st.write("Su planta germinará en menos de 3 días!")
+        st.write("💚 Su planta germinará en menos de 3 días! 💚")
     elif pred == "2":
-        st.write("Su planta tardará entre 4 y 6 días en germinar")
+        st.write("🩵 Su planta tardará entre 4 y 6 días en germinar 🩵")
     else:
-        st.write("Su planta tardará 1 semana o más en germinar!")
+        st.write("💙 Su planta tardará 1 semana o más en germinar 💙")
 
   st.button("Reset", type="primary")
 
