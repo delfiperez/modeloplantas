@@ -46,16 +46,16 @@ def svm():
   
   if st.button("Calcular"):
     if(lav<12):
-      lav=1
+      lav="1"
     else:
-      lav=2
+      lav="2"
 
     if(esp=="Soja Blanca"):
-      esp=1
+      esp="1"
     elif(esp=="Arveja"):
-      esp=0
+      esp="0"
     else:
-      esp=2
+      esp="2"
 
     if(porAga=="1.5%"):
       porAga=0.015
@@ -63,9 +63,9 @@ def svm():
       porAga=0.0135
 
     if(med=="Normal"):
-      med=0
+      med="0"
     else:
-      med=1
+      med="1"
 
 
     variables={
