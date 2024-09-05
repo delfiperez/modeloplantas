@@ -61,7 +61,7 @@ def svm():
       esp="2"
 
     if(porAga=="1.5%"):
-      porAga=0.015
+      porAga=0.0150
     else:
       porAga=0.0135
 
@@ -83,7 +83,8 @@ def svm():
         "medio_n": med,
         "Minutos en Lavandina": lav,
         "porcentaje del Agar": porAga}, index = [1])
-    
+
+    st.write(variables.dtypes)
     st.write(variables)
 
     pred = modelo(variables, m)
